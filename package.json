@@ -13,7 +13,8 @@
     "@babel/preset-react": "^7.10.1",
     "@mdx-js/parcel-plugin-mdx": "^1.6.6",
     "@mdx-js/react": "^2.0.0-next.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
   },
   "scripts": {
     "start": "parcel src/index.html"
