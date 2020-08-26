@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link as ReachLink } from "@reach/router";
 import "../codepen";
 
@@ -21,9 +21,14 @@ const Section = ({ children, area, color = "white" }) => {
 const Icon = ({ children }) => <span className="icon">{children}</span>;
 
 const ListItem = ({ children }) => {
+  const liRef = useRef();
+
   if (Array.isArray(children)) {
     return (
-      <li>
+      <li
+        ref={liRef}
+        onClick={() => liRef.current.querySelector("p > *").click()}
+      >
         <p>{children[0]}</p>
         {children.slice(1)}
       </li>
@@ -37,11 +42,21 @@ const Seedling = () => <span>🌱</span>;
 const Growing = () => <span>🌿</span>;
 const Mature = () => <span>🌳</span>;
 
-const Link = ({ to = "", children }) => {
+const Link = ({ to = "", hideDots = false, children }) => {
   if (to.includes("http")) {
-    return <a href={to}>{children}</a>;
+    return (
+      <a href={to}>
+        {children}
+        {hideDots || "..."}
+      </a>
+    );
   } else {
-    return <ReachLink to={to}>{children}</ReachLink>;
+    return (
+      <ReachLink to={to}>
+        {children}
+        {hideDots || "..."}
+      </ReachLink>
+    );
   }
 };
 
@@ -58,11 +73,19 @@ const Wrapper = ({ children, metadata: { template } = {} }) => (
   <div className="content" style={{ gridTemplate: template }}>
     <Section area="header">
       <h1>
-        <Link to="/">Ryan Kubik</Link>
+        <Link hideDots={true} to="/">
+          Ryan Kubik
+        </Link>
       </h1>
-      <Link to="https://ryankubik.com/blog">Blog</Link>
-      <Link to="https://twitter.com/ryrykubes">Twitter</Link>
-      <Link to="https://rmkubik.itch.io/">Games</Link>
+      <Link hideDots={true} to="https://ryankubik.com/blog">
+        Blog
+      </Link>
+      <Link hideDots={true} to="https://twitter.com/ryrykubes">
+        Twitter
+      </Link>
+      <Link hideDots={true} to="https://rmkubik.itch.io/">
+        Games
+      </Link>
     </Section>
     {children}
   </div>

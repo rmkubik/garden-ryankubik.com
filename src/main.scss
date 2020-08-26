@@ -8,29 +8,35 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
 
-.header > *:first-child {
-  flex: 1;
-}
+  & > *:first-child {
+    flex: 1;
+  }
 
-.header > *:not(:first-child) {
-  border-left: 2px solid black;
-  padding: 8px 16px;
-}
+  & > *:not(:first-child) {
+    border-left: 2px solid black;
+    padding: 8px 16px;
+  }
 
-.header > *:not(:first-child):hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+  & > *:not(:first-child):hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-.header > *:not(:second-child) {
-  border-left: 2px solid black;
-  padding: 8px 16px;
-}
+  & > *:not(:second-child) {
+    border-left: 2px solid black;
+    padding: 8px 16px;
+  }
 
-.header > a {
-  margin-left: 0;
+  & a {
+    margin-left: 0;
+    color: black;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
 }
 
 .content {
@@ -128,24 +134,32 @@ li {
   background-color: white;
   display: flex;
   margin: 8px 0;
-}
 
-li > *:first-child {
-  flex: 1;
-}
+  & > * {
+    margin: 0;
+  }
 
-li > * {
-  margin: 0;
-}
+  & > *:first-child {
+    flex: 1;
+  }
 
-li:hover {
-  background-color: aliceblue;
-  cursor: pointer;
-  /*   border-style: dashed solid; */
-  animation-name: headShake;
-  animation-duration: 800ms;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+    animation-name: headShake;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 .center {
