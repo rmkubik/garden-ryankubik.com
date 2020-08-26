@@ -7,7 +7,6 @@ import { ListItem, Wrapper } from "./layout";
 
 import Index from "../../pages/index.mdx";
 import RandomnessUtils from "../../pages/randomness-utils.mdx";
-import Test from "../test.mdx";
 
 const components = {
   li: ListItem,
@@ -19,7 +18,6 @@ const App = () => {
     <MDXProvider components={components}>
       <Router>
         <Index path="/" />
-        <Test path="/test" />
         <RandomnessUtils path="/randomness-utils" />
       </Router>
     </MDXProvider>
