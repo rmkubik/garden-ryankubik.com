@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link as ReachLink } from "@reach/router";
+import { stripIndents } from "common-tags";
 import "../codepen";
 
 const Center = ({ children }) => {
@@ -73,27 +74,36 @@ const EmailSignup = () => {
   );
 };
 
-const Wrapper = ({ children, metadata: { template } = {} }) => (
-  <div className="content" style={{ gridTemplate: template }}>
-    <Section area="header">
-      <h1>
-        <Link hideDots={true} hideArrow={true} to="/">
-          Ryan Kubik
+const Wrapper = ({
+  children,
+  metadata: { template } = { template: "header header header" },
+}) => {
+  return (
+    <div className="content" style={{ gridTemplate: stripIndents(template) }}>
+      <Section area="header">
+        <h1>
+          <Link hideDots={true} hideArrow={true} to="/">
+            Ryan Kubik
+          </Link>
+        </h1>
+        <Link hideDots={true} hideArrow={true} to="https://ryankubik.com/blog">
+          Blog
         </Link>
-      </h1>
-      <Link hideDots={true} hideArrow={true} to="https://ryankubik.com/blog">
-        Blog
-      </Link>
-      <Link hideDots={true} hideArrow={true} to="https://twitter.com/ryrykubes">
-        Twitter
-      </Link>
-      <Link hideDots={true} hideArrow={true} to="https://rmkubik.itch.io/">
-        Games
-      </Link>
-    </Section>
-    {children}
-  </div>
-);
+        <Link
+          hideDots={true}
+          hideArrow={true}
+          to="https://twitter.com/ryrykubes"
+        >
+          Twitter
+        </Link>
+        <Link hideDots={true} hideArrow={true} to="https://rmkubik.itch.io/">
+          Games
+        </Link>
+      </Section>
+      {children}
+    </div>
+  );
+};
 
 export {
   Center,
