@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReachLink } from "@reach/router";
 import "../codepen";
 
 const Center = ({ children }) => {
@@ -36,8 +37,12 @@ const Seedling = () => <span>🌱</span>;
 const Growing = () => <span>🌿</span>;
 const Mature = () => <span>🌳</span>;
 
-const Link = ({ to, children }) => {
-  return <a href={to}>{children}</a>;
+const Link = ({ to = "", children }) => {
+  if (to.includes("http")) {
+    return <a href={to}>{children}</a>;
+  } else {
+    return <ReachLink to={to}>{children}</ReachLink>;
+  }
 };
 
 const EmailSignup = () => {
@@ -52,7 +57,9 @@ const EmailSignup = () => {
 const Wrapper = ({ children, metadata: { template } = {} }) => (
   <div className="content" style={{ gridTemplate: template }}>
     <Section area="header">
-      <h1>Ryan Kubik</h1>
+      <h1>
+        <Link to="/">Ryan Kubik</Link>
+      </h1>
       <Link to="https://ryankubik.com/blog">Blog</Link>
       <Link to="https://twitter.com/ryrykubes">Twitter</Link>
       <Link to="https://rmkubik.itch.io/">Games</Link>

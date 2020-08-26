@@ -1,3 +1,14 @@
+import {
+  Section,
+  Center,
+  Icon,
+  Seedling,
+  Growing,
+  Mature,
+  Link,
+  EmailSignup,
+} from "../src/components/layout";
+
 export const metadata = {
   template: `
     "header header header"
@@ -10,23 +21,12 @@ export const metadata = {
 `,
 };
 
-import {
-  Section,
-  Center,
-  Icon,
-  Seedling,
-  Growing,
-  Mature,
-  Link,
-  EmailSignup,
-} from "../src/components/layout";
-
 <Section area="writing" color="lightpink">
 
 
 ## <Icon>📝</Icon> Stuff I've been writing about
 
-- Utilities for randomness <Seedling/>
+- <Link to="/randomness-utils">Utilities for randomness</Link> <Seedling />
 - Making Wildfire Swap <Growing/>
 - Web development <Mature/>
 - Personal development <Growing/>

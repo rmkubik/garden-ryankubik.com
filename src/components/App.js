@@ -6,6 +6,7 @@ import "../codepen";
 import { ListItem, Wrapper } from "./layout";
 
 import Index from "../../pages/index.mdx";
+import RandomnessUtils from "../../pages/randomness-utils.mdx";
 import Test from "../test.mdx";
 
 const components = {
@@ -19,6 +20,7 @@ const App = () => {
       <Router>
         <Index path="/" />
         <Test path="/test" />
+        <RandomnessUtils path="/randomness-utils" />
       </Router>
     </MDXProvider>
   );
