@@ -49,6 +49,18 @@ const EmailSignup = () => {
   );
 };
 
+const Wrapper = ({ children }) => (
+  <div className="content">
+    <Section area="header">
+      <h1>Ryan Kubik</h1>
+      <div>Blog</div>
+      <div>Twitter</div>
+      <div>Games</div>
+    </Section>
+    {children}
+  </div>
+);
+
 export {
   Center,
   Section,
@@ -59,4 +71,5 @@ export {
   Mature,
   Link,
   EmailSignup,
+  Wrapper,
 };
