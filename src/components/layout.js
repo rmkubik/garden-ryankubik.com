@@ -49,8 +49,8 @@ const EmailSignup = () => {
   );
 };
 
-const Wrapper = ({ children }) => (
-  <div className="content">
+const Wrapper = ({ children, metadata: { template } = {} }) => (
+  <div className="content" style={{ gridTemplate: template }}>
     <Section area="header">
       <h1>Ryan Kubik</h1>
       <Link to="https://ryankubik.com/blog">Blog</Link>
