@@ -47,11 +47,11 @@ const Link = ({ to = "", hideDots = false, hideArrow = false, children }) => {
   if (to.includes("http")) {
     return (
       <>
-        <a href={to}>
+        <a href={to} className="external-link">
           {children}
           {hideDots || "..."}
         </a>
-        {hideArrow || <span>⬈</span>}
+        {hideArrow || <span>➜</span>}
       </>
     );
   } else {

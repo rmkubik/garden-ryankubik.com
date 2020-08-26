@@ -159,8 +159,22 @@ li {
     a {
       text-decoration: underline;
     }
+
+    // a.external-link {
+    //   // Span that comes immediately after an external link
+    //   & + span:before {
+    //     content: "leave this site ";
+    //   }
+    // }
   }
 }
+
+// a.external-link:hover {
+//   // Span that comes immediately after an external link
+//   & + span:after {
+//     content: "  leave this site";
+//   }
+// }
 
 .center {
   width: 100%;
