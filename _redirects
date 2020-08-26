@@ -1,0 +1,2 @@
+# redirect everything back to root so reach router can handle it
+/*      /
