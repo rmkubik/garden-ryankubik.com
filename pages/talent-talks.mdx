@@ -1,0 +1,51 @@
+import {
+  Section,
+  Center,
+  Icon,
+  Seedling,
+  Growing,
+  Mature,
+  Link,
+  EmailSignup,
+} from "../src/components/layout";
+
+export const metadata = {
+  template: `
+    "header header header"
+    "intro . talk-1"
+    ". . talk-2"
+    ". . seedling"
+`,
+};
+
+<Section area="intro" color="lavender">
+
+## <Icon>🐽</Icon> PIGSquad Talent Talks
+
+I've spoken at a couple events in town.
+
+</Section>
+
+<Section area="talk-1" color="lightpink">
+
+## <Icon>🎤</Icon> Build your own tools
+
+Talk Embed
+
+</Section>
+
+<Section area="talk-2" color="lightpink">
+
+## <Icon>🎤</Icon> Social media
+
+Talk Embed
+
+</Section>
+
+<Section area="seedling" color="white">
+
+<Center>
+  <Seedling />
+</Center>
+
+</Section>
