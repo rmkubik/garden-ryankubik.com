@@ -53,9 +53,9 @@ const Wrapper = ({ children }) => (
   <div className="content">
     <Section area="header">
       <h1>Ryan Kubik</h1>
-      <div>Blog</div>
-      <div>Twitter</div>
-      <div>Games</div>
+      <Link to="https://ryankubik.com/blog">Blog</Link>
+      <Link to="https://twitter.com/ryrykubes">Twitter</Link>
+      <Link to="https://rmkubik.itch.io/">Games</Link>
     </Section>
     {children}
   </div>
