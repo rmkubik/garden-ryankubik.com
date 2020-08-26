@@ -1,2 +1,2 @@
 # redirect everything back to root so reach router can handle it
-/*      /
+/*    /index.html   200
