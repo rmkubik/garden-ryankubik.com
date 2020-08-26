@@ -43,13 +43,16 @@ const Seedling = () => <span>🌱</span>;
 const Growing = () => <span>🌿</span>;
 const Mature = () => <span>🌳</span>;
 
-const Link = ({ to = "", hideDots = false, children }) => {
+const Link = ({ to = "", hideDots = false, hideArrow = false, children }) => {
   if (to.includes("http")) {
     return (
-      <a href={to}>
-        {children}
-        {hideDots || "..."}
-      </a>
+      <>
+        <a href={to}>
+          {children}
+          {hideDots || "..."}
+        </a>
+        {hideArrow || <span>⬈</span>}
+      </>
     );
   } else {
     return (
@@ -74,17 +77,17 @@ const Wrapper = ({ children, metadata: { template } = {} }) => (
   <div className="content" style={{ gridTemplate: template }}>
     <Section area="header">
       <h1>
-        <Link hideDots={true} to="/">
+        <Link hideDots={true} hideArrow={true} to="/">
           Ryan Kubik
         </Link>
       </h1>
-      <Link hideDots={true} to="https://ryankubik.com/blog">
+      <Link hideDots={true} hideArrow={true} to="https://ryankubik.com/blog">
         Blog
       </Link>
-      <Link hideDots={true} to="https://twitter.com/ryrykubes">
+      <Link hideDots={true} hideArrow={true} to="https://twitter.com/ryrykubes">
         Twitter
       </Link>
-      <Link hideDots={true} to="https://rmkubik.itch.io/">
+      <Link hideDots={true} hideArrow={true} to="https://rmkubik.itch.io/">
         Games
       </Link>
     </Section>
