@@ -25,16 +25,17 @@ const ListItem = ({ children }) => {
 
   if (Array.isArray(children)) {
     return (
-      <li
-        ref={liRef}
-        onClick={() => liRef.current.querySelector("p > *").click()}
-      >
+      <li ref={liRef} onClick={() => liRef.current.querySelector("a").click()}>
         <p>{children[0]}</p>
         {children.slice(1)}
       </li>
     );
   } else {
-    return <li>{children}</li>;
+    return (
+      <li ref={liRef} onClick={() => liRef.current.querySelector("a").click()}>
+        {children}
+      </li>
+    );
   }
 };
 
