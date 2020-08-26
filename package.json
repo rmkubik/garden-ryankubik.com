@@ -15,6 +15,7 @@
     "@mdx-js/parcel-plugin-mdx": "^1.6.6",
     "@mdx-js/react": "^2.0.0-next.1",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
     "sass": "^1.26.10"
   },
   "scripts": {
@@ -22,5 +23,10 @@
     "build": "parcel build src/index.html"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "staticFiles": {
+    "staticPath": [
+      "_redirects"
+    ]
+  }
 }
