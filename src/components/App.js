@@ -5,8 +5,33 @@ import "../codepen";
 
 import { ListItem, Wrapper } from "./layout";
 
-import Index from "../../pages/index.mdx";
-import RandomnessUtils from "../../pages/randomness-utils.mdx";
+import pages from "../../pages/**/*.mdx";
+
+const pageEntries = Object.entries(pages);
+const routes = [];
+while (pageEntries.length > 0) {
+  let [key, entry] = pageEntries.pop();
+
+  if (key === "index") {
+    key = "/";
+  }
+
+  if (entry.__esModule) {
+    routes.push([key, entry.default]);
+    continue;
+  }
+
+  const entries = Object.entries(entry).map((ent) => {
+    if (ent[0] === "index") {
+      return [`/${key}`, ent[1]];
+    }
+
+    return [`/${key}/${ent[0]}`, ent[1]];
+  });
+  pageEntries.push(...entries);
+}
+
+console.log(routes);
 
 const components = {
   li: ListItem,
@@ -17,8 +42,9 @@ const App = () => {
   return (
     <MDXProvider components={components}>
       <Router>
-        <Index path="/" />
-        <RandomnessUtils path="/randomness-utils" />
+        {routes.map(([key, Route]) => {
+          return <Route key={key} path={key} />;
+        })}
       </Router>
     </MDXProvider>
   );
