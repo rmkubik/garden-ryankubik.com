@@ -13,5 +13,8 @@ import App from "./components/App";
 //
 // BIG Q - how do we render/hydrate individual pages for the router?
 // We could ditch the router and just create actual static pages?
+//
+// separate concern - put a published, and last edited timestamp
+// on each page based on git history
 
 ReactDOM.render(<App />, document.getElementById("root"));
