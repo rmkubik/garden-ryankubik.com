@@ -24,16 +24,20 @@ const Icon = ({ children }) => <span className="icon">{children}</span>;
 const ListItem = ({ children }) => {
   const liRef = useRef();
 
+  const onClick = () => {
+    liRef.current.querySelector("a")?.click();
+  };
+
   if (Array.isArray(children)) {
     return (
-      <li ref={liRef} onClick={() => liRef.current.querySelector("a").click()}>
+      <li ref={liRef} onClick={onClick}>
         <p>{children[0]}</p>
         {children.slice(1)}
       </li>
     );
   } else {
     return (
-      <li ref={liRef} onClick={() => liRef.current.querySelector("a").click()}>
+      <li ref={liRef} onClick={onClick}>
         {children}
       </li>
     );
@@ -76,7 +80,7 @@ const Link = ({ to = "", hideDots = false, hideArrow = false, children }) => {
           {children}
           {hideDots || "..."}
         </a>
-        {hideArrow || <span>➜</span>}
+        {hideArrow || <span className="external-arrow">➜</span>}
       </>
     );
   } else {

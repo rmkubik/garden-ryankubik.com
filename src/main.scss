@@ -87,6 +87,10 @@ section > a {
   cursor: pointer;
 }
 
+span.external-arrow {
+  margin-left: 16px;
+}
+
 section > a:hover {
   text-decoration: underline;
 }
