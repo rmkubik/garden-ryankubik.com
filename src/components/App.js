@@ -4,7 +4,7 @@ import { Router } from "@reach/router";
 import "../codepen";
 
 import * as layoutComponents from "./layout";
-const { ListItem, Wrapper, ...shortcodes } = layoutComponents;
+const { ListItem, Wrapper, Link, ...shortcodes } = layoutComponents;
 
 import pages from "../../pages/**/*.mdx";
 
@@ -35,6 +35,11 @@ while (pageEntries.length > 0) {
 const components = {
   li: ListItem,
   wrapper: Wrapper,
+  a: ({ children, href }) => {
+    return <Link to={href}>{children}</Link>;
+  },
+  // expose following components as shortcodes
+  Link,
   ...shortcodes,
 };
 
