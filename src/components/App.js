@@ -3,7 +3,8 @@ import { MDXProvider } from "@mdx-js/react";
 import { Router } from "@reach/router";
 import "../codepen";
 
-import { ListItem, Wrapper } from "./layout";
+import * as layoutComponents from "./layout";
+const { ListItem, Wrapper, ...shortcodes } = layoutComponents;
 
 import pages from "../../pages/**/*.mdx";
 
@@ -31,11 +32,10 @@ while (pageEntries.length > 0) {
   pageEntries.push(...entries);
 }
 
-console.log(routes);
-
 const components = {
   li: ListItem,
   wrapper: Wrapper,
+  ...shortcodes,
 };
 
 const App = () => {
